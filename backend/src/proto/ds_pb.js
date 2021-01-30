@@ -14,7 +14,7 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var proto_dsmap_pb = require('./dsmap_pb.js');
+var proto_dsmap_pb = require('../proto/dsmap_pb.js');
 goog.object.extend(proto, proto_dsmap_pb);
 goog.exportSymbol('proto.ds.proto.AuthError', null, global);
 goog.exportSymbol('proto.ds.proto.DSError', null, global);

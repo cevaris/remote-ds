@@ -2,7 +2,7 @@
 // file: proto/ds.proto
 
 import * as jspb from "google-protobuf";
-import * as proto_dsmap_pb from "./dsmap_pb";
+import * as proto_dsmap_pb from "../proto/dsmap_pb";
 
 export class AuthError extends jspb.Message {
   getMessage(): string;
