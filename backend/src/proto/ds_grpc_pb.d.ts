@@ -3,8 +3,8 @@
 // package: ds.proto
 // file: proto/ds.proto
 
-import * as proto_ds_pb from "../proto/ds_pb";
-import * as proto_dsmap_pb from "../proto/dsmap_pb";
+import * as proto_ds_pb from "./ds_pb";
+import * as proto_dsmap_pb from "./dsmap_pb";
 import * as grpc from "@grpc/grpc-js";
 
 interface IDataStructureService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {

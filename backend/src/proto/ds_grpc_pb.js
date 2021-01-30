@@ -4,8 +4,8 @@
 // https://developers.google.com/protocol-buffers/docs/style
 'use strict';
 var grpc = require('@grpc/grpc-js');
-var proto_ds_pb = require('../proto/ds_pb.js');
-var proto_dsmap_pb = require('../proto/dsmap_pb.js');
+var proto_ds_pb = require('./ds_pb.js');
+var proto_dsmap_pb = require('./dsmap_pb.js');
 
 function serialize_ds_proto_MapPutRequest(arg) {
   if (!(arg instanceof proto_dsmap_pb.MapPutRequest)) {
