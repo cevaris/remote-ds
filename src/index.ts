@@ -1,12 +1,12 @@
-import * as grpc from '@grpc/grpc-js';
+import { sendUnaryData, Server, ServerCredentials, ServerUnaryCall } from '@grpc/grpc-js';
 import { MapPutRequest, MapPutResponse } from './proto/dsmap_pb';
 import { DataStructureService, IDataStructureServer } from './proto/ds_grpc_pb';
 
 // https://github.com/agreatfool/grpc_tools_node_protoc_ts/blob/master/doc/server_impl_signature.md
 const impl: IDataStructureServer = {
     mapPut(
-        call: grpc.ServerUnaryCall<MapPutRequest, MapPutResponse>,
-        callback: grpc.sendUnaryData<MapPutResponse>
+        call: ServerUnaryCall<MapPutRequest, MapPutResponse>,
+        callback: sendUnaryData<MapPutResponse>
     ) {
         if (call.request) {
             console.log(
@@ -17,13 +17,13 @@ const impl: IDataStructureServer = {
     }
 }
 
-const port = process.env.PORT || '0.0.0.0:4000';
-const server = new grpc.Server();
+const host = process.env.HOST_PORT || '0.0.0.0:4000';
+const server = new Server();
 server.addService(DataStructureService, impl);
 server.bindAsync(
-    port,
-    grpc.ServerCredentials.createInsecure(),
+    host,
+    ServerCredentials.createInsecure(),
     () => {
-        console.log(`Server is running port=${port}`);
+        console.log(`Server is running port=${host}`);
     }
 )
