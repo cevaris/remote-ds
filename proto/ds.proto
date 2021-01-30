@@ -1,0 +1,20 @@
+// https://developers.google.com/protocol-buffers/docs/style
+syntax = "proto3";
+
+package ds.proto;
+
+import "proto/dsmap.proto";
+
+message AuthError {
+    string message = 1;
+}
+
+message DSError {
+    oneof event {
+        AuthError auth_error = 1;
+    }
+}
+
+service DataStructure {
+    rpc MapPut(MapPutRequest) returns (MapPutResponse) {}
+}
